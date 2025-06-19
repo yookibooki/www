@@ -1,10 +1,13 @@
 #!/bin/bash
 set -e
 echo "🚀 Starting Arch Linux development setup..."
+
 # System update
 sudo pacman -Syu --noconfirm
+
 # Essential development tools
 sudo pacman -S --needed --noconfirm git base-devel
+
 # Install yay if not present
 if ! command -v yay &> /dev/null; then
     echo "Installing yay AUR helper..."
@@ -17,8 +20,13 @@ if ! command -v yay &> /dev/null; then
     cd ~
     rm -rf yay-bin
 fi
+
 # Core packages
-sudo pacman -S --noconfirm zsh tmux neovim htop bat fzf ripgrep wget i3-wm i3blocks rofi dunst picom alacritty xorg-server xorg-xinit
+sudo pacman -S --noconfirm \
+    zsh tmux neovim htop bat fzf ripgrep wget \
+    i3-wm i3blocks rofi dunst picom alacritty \
+    xorg-server xorg-xinit
+
 # AUR packages
 yay -S --noconfirm brave-bin visual-studio-code-bin
 
