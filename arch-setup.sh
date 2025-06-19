@@ -40,8 +40,6 @@ cat <<'EOF'
 ✅ Setup complete!
 
 To install your dotfiles, run:
-  curl -sSL https://raw.githubusercontent.com/dikiaap/dotfiles/\
-refs/heads/master/install.sh \
-    | bash -s -- -i    # -i to install, use -r to restore
-
+curl -sSL https://raw.githubusercontent.com/dikiaap/dotfiles/refs/heads/master/install.sh | bash -s -- -i
+Tips: add -i to install, -r to restore
 EOF
